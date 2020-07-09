@@ -26,7 +26,8 @@ test('renders header', () => {
   // Test that there's a new component in the UI
 
   // QUERY FUNCTIONS
-  const linkElement = getByText(/add new animal/i); // case INSENSITIVE
+  const linkElement = getByText(/add new animal/i); // case INSENSITIVE and a regex string
   // EXPECTATIONS
+  // expect(linkElement).toBeInTheDocument();
   expect(linkElement).toBeVisible();
 });

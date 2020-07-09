@@ -1,3 +1,5 @@
+// test('fake test', () => {});
+
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import AnimalForm from './AnimalForm';
@@ -17,10 +19,13 @@ test('inputs are visible', () => {
   //ARRANGE - set up the testing environment
   const { getByLabelText } = render(<AnimalForm />);
 
+  // const result = render(<AnimalForm />);
+  // console.log(result);
+
   // ACT
   // NONE. Tapped out.
 
-  // ASSERT
+  // ASSERT 
   getByLabelText(/species/i); // getByLabelText throws an exception when it fails -- so you can just use it to check that the input is in the DOM rather than having to say `expect().toBeInDocument()`! 🆒
   getByLabelText(/age/i);
   getByLabelText(/notes/i);
@@ -30,6 +35,7 @@ test('form submit adds new animals to the list', () => {
   const { getByLabelText, getByText, getByTestId } = render(<AnimalForm />);
   // querying for all the input nodes
   const speciesInput = getByLabelText(/species/i);
+  // console.log(speciesInput); 
   const ageInput = getByLabelText(/age/i);
   const notesInput = getByLabelText(/notes/i);
 
